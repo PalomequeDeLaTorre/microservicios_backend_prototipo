@@ -6,7 +6,7 @@ const server = gateway({
   routes: [
     {
       prefix: '/evento', // Rutas para el microservicio de eventos
-      target: 'http://localhost:8081/', // URL del servicio de eventos
+      target: 'https://microservicios-backend-prototipo.vercel.app/evento', // URL del servicio de eventos
       hooks: {},
     },
     {
