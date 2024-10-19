@@ -15,8 +15,6 @@ app.post('/insertar-compras', async (req, res) => {
     }
 });
 
-
-
 app.get('/lista-compras', async (req, res) => {
     try {
         const snapshot = await conexionCompras.get();
