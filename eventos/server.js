@@ -3,9 +3,16 @@ const cors = require('cors');
 const { conexionEventos } = require('../api_gateway/firebase');
 const app = express();
 const port = 8081;
+const path = require('path');
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'eventos.html'));
+  });
 
 app.post('/insertar-eventos', async (req, res) => {
     const { nombre, fecha, lugar } = req.body;
@@ -28,5 +35,5 @@ app.get('/lista-eventos', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Microservicio EVENTOS escuchando en localhost:${port}`);
+    console.log(`Microservicio EVENTOS escuchando en http://localhost:${port}`);
 });

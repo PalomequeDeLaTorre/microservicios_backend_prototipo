@@ -4,8 +4,18 @@ const cors = require('cors');
 const app = express();
 const port = 8083;
 
+const path = require('path');
+
 app.use(cors());
 app.use(express.json());
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'compras.html'));
+  });
+  
 
 app.post('/insertar-compras', async (req, res) => {
     const { eventoId, comprador, cantidad } = req.body;
@@ -28,5 +38,5 @@ app.get('/lista-compras', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Microservicio COMPRAS escuchando en localhost:${port}`);
+    console.log(`Microservicio COMPRAS escuchando en http://localhost:${port}`);
 });

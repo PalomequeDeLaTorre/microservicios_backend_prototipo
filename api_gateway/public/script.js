@@ -1,4 +1,4 @@
-const gatewayURL = 'http://localhost:9001'; // URL del gateway
+const gatewayURL = 'http://localhost:9001/api'; // URL del gateway
 
 // Función para mostrar la sección seleccionada
 function mostrarSeccion(seccion) {
@@ -76,7 +76,7 @@ async function cargarCompras() {
     }
 }
 
-// Cargar los datos al iniciar la página
+// Carga los datos al iniciar la página
 window.onload = function () {
     cargarEventos();
     cargarConfirmaciones();

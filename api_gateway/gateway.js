@@ -1,6 +1,15 @@
+const express = require('express');
 const gateway = require('fast-gateway');
+const path = require('path');
 
-const port = 9001; // Puerto del gateway
+const port = 9001;
+const app = express();
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'pagina-inicio.html'));
+});
 
 const server = gateway({
   routes: [
@@ -22,7 +31,8 @@ const server = gateway({
   ],
 });
 
-// Inicia el gateway y escucha en el puerto 9001
-server.start(port).then(() => {
-  console.log(`Gateway escuchando en el puerto ${port}`);
+
+app.use('/api', server); 
+app.listen(port, () => {
+  console.log(`Servidor escuchando en http://localhost:${port}`);
 });

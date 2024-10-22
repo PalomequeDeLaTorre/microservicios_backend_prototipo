@@ -3,9 +3,16 @@ const { conexionConfirmaciones } = require('../api_gateway/firebase');
 const cors = require('cors');  
 const app = express();
 const port = 8082;
+const path = require('path');
 
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'confirmacion.html'));
+  });
 
 app.post('/insertar-confirmaciones', async (req, res) => {
     const { eventoId, asistente } = req.body;
@@ -28,5 +35,5 @@ app.get('/lista-confirmaciones', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Microservicio CONFIRMACIONES escuchando en localhost:${port}`);
+    console.log(`Microservicio CONFIRMACIONES escuchando en http://localhost:${port}`);
 });
