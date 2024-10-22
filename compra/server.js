@@ -1,8 +1,10 @@
 const express = require('express');
 const { conexionCompras } = require('../api_gateway/firebase');
+const cors = require('cors');  
 const app = express();
 const port = 8083;
 
+app.use(cors());
 app.use(express.json());
 
 app.post('/insertar-compras', async (req, res) => {

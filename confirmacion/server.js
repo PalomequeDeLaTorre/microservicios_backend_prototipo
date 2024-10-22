@@ -1,8 +1,10 @@
 const express = require('express');
 const { conexionConfirmaciones } = require('../api_gateway/firebase');
+const cors = require('cors');  
 const app = express();
 const port = 8082;
 
+app.use(cors());
 app.use(express.json());
 
 app.post('/insertar-confirmaciones', async (req, res) => {

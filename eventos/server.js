@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');  
 const { conexionEventos } = require('../api_gateway/firebase');
 const app = express();
 const port = 8081;
 
+app.use(cors());
 app.use(express.json());
 
 app.post('/insertar-eventos', async (req, res) => {

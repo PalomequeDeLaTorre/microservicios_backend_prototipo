@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Eventos Disponibles</h1>
+        <div id="eventos" class="event-list"></div>
+    </div>
+
+    <script>
+        async function cargarEventos() {
+            try {
+                const respuesta = await fetch('http://localhost:8081/lista-eventos');
+                if (!respuesta.ok) throw new Error('Error al obtener los eventos');
+
+                const data = await respuesta.json();
+                const eventosDiv = document.getElementById('eventos');
+
+                if (data.eventos.length > 0) {
+                    data.eventos.forEach(evento => {
+                        const eventoElemento = document.createElement('div');
+                        eventoElemento.className = 'evento';
+
+                        eventoElemento.innerHTML = `
+                            <h2>${evento.nombre}</h2>
+                            <p><strong>Fecha:</strong> ${evento.fecha}</p>
+                            <p><strong>Lugar:</strong> ${evento.lugar}</p>
+                        `;
+
+                        eventosDiv.appendChild(eventoElemento);
+                    });
+                } else {
+                    eventosDiv.innerHTML = '<p>No hay eventos disponibles.</p>';
+                }
+            } catch (error) {
+                console.error('Error al cargar los eventos:', error);
+                document.getElementById('eventos').innerHTML = '<p>Error al cargar los eventos.</p>';
+            }
+        }
+
+        cargarEventos();
+    </script>
+</body>
+</html>
