@@ -1,22 +1,40 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const eventosTableBody = document.getElementById("eventos-table-body");
+
+    fetch('http://localhost:8081/lista-eventos')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener los eventos');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const eventos = data.eventos;
+            eventos.forEach(evento => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${evento.nombre}</td>
+                    <td>${evento.fecha}</td>
+                    <td>${evento.lugar}</td>
+                `;
+                eventosTableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+});
+
 document.getElementById('btnAgregarEvento').addEventListener('click', function() {
     window.location.href = 'agregar_evento.html';
 });
 
-async function obtenerEventos() {
-    try {
-        const respuesta = await fetch('http://localhost:8081/lista-eventos');
-        const data = await respuesta.json();
-        const listaEventos = document.getElementById('listaEventos');
-        listaEventos.innerHTML = '';
+document.getElementById('btnComprar').addEventListener('click', function() {
+    window.location.href = 'comprar_evento.html';
+});
 
-        data.eventos.forEach(evento => {
-            const li = document.createElement('li');
-            li.innerText = `${evento.nombre} - ${evento.fecha} - ${evento.lugar}`;
-            listaEventos.appendChild(li);
-        });
-    } catch (error) {
-        console.error(error);
-    }
-}
+document.getElementById('btnLista').addEventListener('click', function() {
+    window.location.href = '/compra/public/compras.html';
+});
 
-obtenerEventos();
+document.getElementById('btnConfirmar').addEventListener('click', function() {
+    window.location.href = '/confirmacion/public/confirmacion.html';
+});

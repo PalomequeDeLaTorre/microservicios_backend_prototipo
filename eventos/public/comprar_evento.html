@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Evento</title>
+    <link rel="stylesheet" href="css/compra_style.css">
+    <script defer src="js/comprar_evento.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Comprar</h1>
+        <form id="formComprar">
+            <select id="evento" required>
+                <option value="">Seleccione un evento</option>
+            </select>
+            <input type="text" id="comprador" placeholder="Nombre del comprador" required>
+            <input type="number" id="cantidad" placeholder="Cantidad" required>
+            <button type="submit">Comprar</button>
+            <p id="mensaje"></p>
+        </form>
+        
+        <button id="btnRegresar" class="btn">Regresar</button>
+    </div>
+
+    
+</body>
+</html>

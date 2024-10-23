@@ -5,14 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Eventos</title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Lista de Eventos</h1>
-        <button id="btnAgregarEvento">Agregar Nuevo Evento</button>
-        <ul id="listaEventos"></ul>
-    </div>
+        <div class="dropdown">
+            <span class="dropbtn">&#9776;</span>
+            <div class="dropdown-content">
+                <button id="btnAgregarEvento">Nuevo Evento</button>
+                <button id="btnComprar">Comprar Boletos</button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Eventos Disponibles</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Evento</th>
+                    <th>Fecha</th>
+                    <th>Lugar</th>
+                </tr>
+            </thead>
+            <tbody id="eventos-table-body">
+            </tbody>
+        </table>
+    </main>
+    
 
-    <script src="js/script.js"></script>
+    <footer>
+        <p>Microservices Backend &copy; 2024</p>
+    </footer>
+
 </body>
 </html>

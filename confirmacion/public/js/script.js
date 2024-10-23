@@ -5,7 +5,7 @@ document.getElementById('formConfirmacion').addEventListener('submit', async fun
     const asistente = document.getElementById('asistente').value;
 
     try {
-        const respuesta = await fetch('https:confirmacion-microservicio.onrender.com/insertar-confirmaciones', {
+        const respuesta = await fetch('http://localhost:8082/insertar-confirmaciones', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ document.getElementById('formConfirmacion').addEventListener('submit', async fun
 
 async function obtenerConfirmaciones() {
     try {
-        const respuesta = await fetch('https:confirmacion-microservicio.onrender.com/lista-confirmaciones');
+        const respuesta = await fetch('http://localhost:8082/lista-confirmaciones');
         const data = await respuesta.json();
         const listaConfirmaciones = document.getElementById('listaConfirmaciones');
         listaConfirmaciones.innerHTML = '';

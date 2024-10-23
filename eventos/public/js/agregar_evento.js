@@ -21,10 +21,11 @@ document.getElementById('formEvento').addEventListener('submit', async function 
         const data = await respuesta.json();
         document.getElementById('mensaje').innerText = data.mensaje;
 
-        window.location.href = './index.html';
+        
 
     } catch (error) {
         console.error(error);
         document.getElementById('mensaje').innerText = 'Error al crear el evento';
     }
+    window.location.href = './index.html';
 });
