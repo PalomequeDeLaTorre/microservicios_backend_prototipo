@@ -14,18 +14,18 @@ app.get('/', (req, res) => {
 const server = gateway({
   routes: [
     {
-      prefix: '/evento', // Rutas para el microservicio de eventos
-      target: 'http://localhost:8081/', // URL del servicio de eventos
+      prefix: '/evento', 
+      target: 'https:eventos-microservicio-1.onrender.com', 
       hooks: {},
     },
     {
-      prefix: '/confirmacion', // Rutas para el microservicio de confirmación
-      target: 'http://localhost:8082/', // URL del servicio de confirmación
+      prefix: '/confirmacion', 
+      target: 'https:confirmacion-microservicio.onrender.com', 
       hooks: {},
     },
     {
-      prefix: '/compra', // Rutas para el microservicio de compras
-      target: 'http://localhost:8083/', // URL del servicio de compras
+      prefix: '/compra', 
+      target: 'https:compra-microservicio.onrender.com', 
       hooks: {},
     },
   ],

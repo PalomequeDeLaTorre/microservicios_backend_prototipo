@@ -10,56 +10,25 @@
 <body>
     <header>
         <h1>Api Gateway de Microservicios</h1>
-        <nav>
-            <ul>
-                <li><a href="#eventos" onclick="mostrarSeccion('eventos')">Eventos</a></li>
-                <li><a href="#compras" onclick="mostrarSeccion('compras')">Compras</a></li>
-                <li><a href="#confirmaciones" onclick="mostrarSeccion('confirmaciones')">Confirmaciones</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section id="eventos">
-            <h2>Eventos</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Lugar</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla-eventos"></tbody>
-            </table>
-        </section>
+        <div class="botonera">
+            <div class="boton-contenedor">
+                <button class="evento-btn" onclick="redirigirA('https:eventos-microservicio-1.onrender.com')">Eventos</button>
+                <img src="./img/evento.png" alt="Icono de Eventos" class="boton-img">
+            </div>
 
-        <section id="confirmaciones" style="display: none;">
-            <h2>Confirmaciones</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Asistente</th>
-                        <th>Evento</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla-confirmaciones"></tbody>
-            </table>
-        </section>
+            <div class="boton-contenedor">
+                <button class="compra-btn" onclick="redirigirA('https:compra-microservicio.onrender.com')">Compras</button>
+                <img src="./img/compra.png" alt="Icono de Compras" class="boton-img">
+            </div>
 
-        <section id="compras" style="display: none;">
-            <h2>Compras</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Evento</th>
-                        <th>Comprador</th>
-                        <th>Cantidad de Boletos</th>
-                    </tr>
-                </thead>
-                <tbody id="tabla-compras"></tbody> 
-            </table>
-        </section>
+            <div class="boton-contenedor">
+                <button class="confirmacion-btn" onclick="redirigirA('https:confirmacion-microservicio.onrender.com')">Confirmaciones</button>
+                <img src="./img/confirmacion.png" alt="Icono de Confirmaciones" class="boton-img">
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -67,3 +36,5 @@
     </footer>
 </body>
 </html>
+
+

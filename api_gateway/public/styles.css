@@ -1,9 +1,13 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: #f0f0f0;
     color: #333;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 
 header {
     background-color: #003366;
@@ -12,34 +16,82 @@ header {
     padding: 20px;
 }
 
-h2 {
-    text-align: center;
-    color: #003366;
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
+.botonera {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+
+.boton-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: gray;
+button {
+    width: 100%;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     color: white;
+    margin-bottom: 10px;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+
+.boton-img {
+    width: 80%; 
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
+
+
+.boton-img:hover {
+    transform: scale(1.1);
+}
+
+
+.evento-btn {
+    background-color: #4CAF50;
+}
+
+.evento-btn:hover {
+    background-color: #388E3C;
+}
+
+.compra-btn {
+    background-color: #2196F3;
+}
+
+.compra-btn:hover {
+    background-color: #1976D2;
+}
+
+.confirmacion-btn {
+    background-color: #ff2222dc;
+}
+
+.confirmacion-btn:hover {
+    background-color: #e61919;
+}
+
 
 footer {
     text-align: center;
@@ -51,25 +103,9 @@ footer {
     width: 100%;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #003366;
-}
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-}
-
-nav ul li a:hover {
-    background-color: #005bb5;
+@media (max-width: 600px) {
+    .botonera {
+        flex-direction: column;
+    }
 }
