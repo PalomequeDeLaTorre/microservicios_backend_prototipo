@@ -2,3 +2,4 @@ compra/node_modules/
 confirmacion/node_modules/
 eventos/node_modules/
 api_gateway/keyBD.json
+.gitignore
