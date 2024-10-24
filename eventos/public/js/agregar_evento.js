@@ -10,7 +10,7 @@ document.getElementById('formEvento').addEventListener('submit', async function 
     const lugar = document.getElementById('lugar').value;
 
     try {
-        const respuesta = await fetch('http://localhost:8081/insertar-eventos', {
+        const respuesta = await fetch('https://eventos-microservicio-1.onrender.com/insertar-eventos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

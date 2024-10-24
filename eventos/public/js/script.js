@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const eventosTableBody = document.getElementById("eventos-table-body");
 
-    fetch('http://localhost:8081/lista-eventos')
+    fetch('https://eventos-microservicio-1.onrender.com/lista-eventos')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al obtener los eventos');

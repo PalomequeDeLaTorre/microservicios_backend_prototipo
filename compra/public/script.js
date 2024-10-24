@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const comprasTableBody = document.getElementById("compras-table-body");
 
    
-    fetch('http://localhost:8083/lista-compras')
+    fetch('https://compra-microservicio.onrender.com/lista-compras')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al obtener las compras');

@@ -5,7 +5,7 @@ document.getElementById('btnRegresar').addEventListener('click', function() {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const respuesta = await fetch('http://localhost:8081/lista-eventos');
+        const respuesta = await fetch('https://eventos-microservicio-1.onrender.com/lista-eventos');
         const data = await respuesta.json();
 
         const selectEvento = document.getElementById('evento');
@@ -28,7 +28,7 @@ document.getElementById('formComprar').addEventListener('submit', async function
     const cantidad = document.getElementById('cantidad').value;
 
     try {
-        const respuesta = await fetch('http://localhost:8083/insertar-compras', {
+        const respuesta = await fetch('https://compra-microservicio.onrender.com/insertar-compras', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

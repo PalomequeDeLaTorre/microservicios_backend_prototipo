@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const comprasTableBody = document.getElementById("confirmaciones-table-body");
 
-    fetch('http://localhost:8082/lista-confirmaciones')
+    fetch('https://confirmacion-microservicio.onrender.com/lista-confirmaciones')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error al obtener las compras');
