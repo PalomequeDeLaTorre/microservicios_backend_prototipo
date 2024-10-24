@@ -1,44 +1,26 @@
-document.getElementById('formConfirmacion').addEventListener('submit', async function (e) {
-    e.preventDefault();
-    
-    const eventoId = document.getElementById('eventoId').value;
-    const asistente = document.getElementById('asistente').value;
+document.addEventListener("DOMContentLoaded", () => {
+    const comprasTableBody = document.getElementById("confirmaciones-table-body");
 
-    try {
-        const respuesta = await fetch('http://localhost:8082/insertar-confirmaciones', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ eventoId, asistente }),
-        });
-
-        const data = await respuesta.json();
-        document.getElementById('mensaje').innerText = data.mensaje;
-
-        document.getElementById('formConfirmacion').reset();
-        obtenerConfirmaciones();
-    } catch (error) {
-        console.error(error);
-        document.getElementById('mensaje').innerText = 'Error al confirmar asistencia';
-    }
+    fetch('http://localhost:8082/lista-confirmaciones')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener las compras');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const confirmaciones = data.confirmaciones;
+            confirmaciones.forEach(confirmaciones => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${confirmaciones.eventoId}</td>
+                    <td>${confirmaciones.asistente}</td>`;
+                comprasTableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error:', error));
 });
 
-async function obtenerConfirmaciones() {
-    try {
-        const respuesta = await fetch('http://localhost:8082/lista-confirmaciones');
-        const data = await respuesta.json();
-        const listaConfirmaciones = document.getElementById('listaConfirmaciones');
-        listaConfirmaciones.innerHTML = '';
-
-        data.confirmaciones.forEach(confirmacion => {
-            const li = document.createElement('li');
-            li.innerText = `Evento: ${confirmacion.eventoId}, Asistente: ${confirmacion.asistente}`;
-            listaConfirmaciones.appendChild(li);
-        });
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-obtenerConfirmaciones();
+document.getElementById('btnAgrConfirmacion').addEventListener('click', function() {
+    window.location.href = './form_confirmacion.html';
+});

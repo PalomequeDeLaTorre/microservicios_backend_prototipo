@@ -16,27 +16,31 @@ header {
     font-size: 1.5rem;
 }
 
-
-h2 {
+h1 {
     text-align: center;
-    color: #003366;
+    color: #ffffff;
     font-size: 2rem;
     margin: 15px 0;
 }
 
 
+h2 {
+    text-align: center;
+    color: #003366;
+    font-size: 150%;
+    margin: 15px 0;
+}
+
+
 table {
-    width: 90%; 
-    max-width: 1200px; 
+    width: 80%;
     margin: 20px auto;
     border-collapse: collapse;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 table, th, td {
     border: 1px solid #ddd;
 }
-
 th, td {
     padding: 12px;
     text-align: left;

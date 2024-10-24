@@ -16,7 +16,8 @@ header {
 }
 
 h1{
-    margin-right: 37%;
+    margin-right: 35%;
+    text-align: center;
 }
 h2 {
     text-align: center;
@@ -39,7 +40,7 @@ table th, table td {
 }
 
 table th {
-    background-color: #003366;
+    background-color: gray;
     color: white;
 }
 

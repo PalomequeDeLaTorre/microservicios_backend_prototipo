@@ -7,6 +7,7 @@ body {
 .container {
     max-width: 400px;
     padding: 20px;
+    height: auto;
     margin: auto;
     border-radius: 10px;
     border: 1px solid #7f7f7f;
@@ -19,7 +20,7 @@ h1 {
     margin-bottom: 50px;
 }
 
-input {
+input, select {
     display: block;
     margin: 25px auto;
     padding: 12px;
@@ -28,9 +29,12 @@ input {
     border: 1px solid #ced4da;
     border-radius: 5px;
     transition: border-color 0.3s;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-input:focus {
+input:focus, select:focus {
     border-color: #007bff;
     outline: none;
 }
@@ -82,8 +86,13 @@ button:hover {
         margin-bottom: 30px;
     }
 
-    input {
+    input, select {
         margin: 15px auto;
+        padding: 10px;
+    }
+
+    button, .btn {
+        padding: 8px;
     }
 }
 
@@ -99,6 +108,10 @@ button:hover {
 
     h1 {
         margin-bottom: 40px;
+    }
+
+    input, select {
+        margin: 20px auto;
     }
 }
 

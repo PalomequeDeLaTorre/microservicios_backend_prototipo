@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Confirmacion</title>
+    <link rel="stylesheet" href="css/form_style.css">
+    <script defer src="js/agregar_confirmacion.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmar Asistencia</h1>
+        <form id="formConfirmacion">
+            <select id="evento" required>
+                <option value="">Seleccione un evento</option>
+            </select>
+            <input type="text" id="asistente" placeholder="Nombre del asistente" required>
+            <button type="submit">Confirmar Asistencia</button>
+        </form>
+        <button id="btnRegresar" class="btn">Regresar</button>
+        <p id="mensaje"></p>
+    </div>
+    
+</body>
+</html>

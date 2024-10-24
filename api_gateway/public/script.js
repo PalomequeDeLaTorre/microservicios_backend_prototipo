@@ -2,7 +2,6 @@ function redirigirA(url) {
     window.location.href = url;
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('a[href="#eventos"]').addEventListener('click', (e) => {
         e.preventDefault(); 

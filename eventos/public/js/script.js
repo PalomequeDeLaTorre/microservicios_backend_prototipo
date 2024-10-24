@@ -31,10 +31,3 @@ document.getElementById('btnComprar').addEventListener('click', function() {
     window.location.href = 'comprar_evento.html';
 });
 
-document.getElementById('btnLista').addEventListener('click', function() {
-    window.location.href = '/compra/public/compras.html';
-});
-
-document.getElementById('btnConfirmar').addEventListener('click', function() {
-    window.location.href = '/confirmacion/public/confirmacion.html';
-});
